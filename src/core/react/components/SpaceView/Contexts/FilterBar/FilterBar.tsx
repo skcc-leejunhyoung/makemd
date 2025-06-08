@@ -257,6 +257,14 @@ export const FilterBar = (props: {
         listItem: "spaces://$kit/#*eventItem",
       });
     }
+    if (type == "timeline") {
+      savePredicate({
+        view: "timeline",
+        listView: "",
+        listGroup: "",
+        listItem: "",
+      });
+    }
   };
 
   const clearFilters = () => {
@@ -378,22 +386,14 @@ export const FilterBar = (props: {
       listGroup: "",
       listItem: "",
     },
-    // calendar: {
-    //   name: i18n.menu.calendarView,
-    //   icon: "ui//calendar",
-    //   view: "list",
-    //   listView: "spaces://$kit/#*calendarView",
-    //   listGroup: "spaces://$kit/#*dateGroup",
-    //   listItem: "spaces://$kit/#*eventItem",
-    // },
-    // calendarDay: {
-    //   name: i18n.menu.dayView,
-    //   icon: "ui//calendar",
-    //   view: "list",
-    //   listView: "spaces://$kit/#*calendarView",
-    //   listGroup: "spaces://$kit/#*dateGroup",
-    //   listItem: "spaces://$kit/#*eventItem",
-    // },
+    timeline: {
+      name: "Timeline View",
+      icon: "ui//timeline",
+      view: "timeline",
+      listView: "",
+      listGroup: "",
+      listItem: "",
+    },
   };
   const showLayoutMenu = (e: React.MouseEvent) => {
     const offset = (e.target as HTMLElement).getBoundingClientRect();

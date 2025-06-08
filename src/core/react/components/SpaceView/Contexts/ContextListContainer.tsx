@@ -23,6 +23,8 @@ import {
 import { FrameContainerView } from "./ContextBuilder/FrameContainerView";
 import { FilterBar } from "./FilterBar/FilterBar";
 import { TableView } from "./TableView/TableView";
+import { TimelineView } from "./TimelineView/TimelineView";
+
 export const ContextListContainer = (props: {
   superstate: Superstate;
   minMode?: boolean;
@@ -200,6 +202,8 @@ export const ContextListContainer = (props: {
               updateRow(row, parseInt(row._index));
             }}
           ></MonthView>
+        ) : viewType == "timeline" ? (
+          <TimelineView superstate={props.superstate} />
         ) : (
           <div className="mk-editor-context" onKeyDown={onKeyDown}>
             <FrameSelectionProvider
